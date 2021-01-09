@@ -35,6 +35,10 @@ function displayList(listData) {
 
     for (let i = 0; i < listData.length; i++) {
         //'completed-true', 'completed-false' classes allow styling to show whether a todo is completed
-        $('#todo-list').append(`<li class="completed-${listData[i].completed}">${listData[i].text}</li>`)
+        // $('#todo-list').append(`<li class="completed-${listData[i].completed}">${listData[i].text}<button class="delete-btn">delete</button></li>`)
+        $('#todo-list').append(`<tr class="completed-${listData[i].completed}">
+                                    <td>${listData[i].text}</td>
+                                    <td><button>X</button></td>
+                                </tr>`)
     }
 }
