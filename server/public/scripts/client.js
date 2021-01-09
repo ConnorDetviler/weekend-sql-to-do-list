@@ -1,22 +1,3 @@
-const dummyData = [
-    {
-        text: 'Take garbage out',
-        completed: true
-    },
-    {
-        text: 'Work on weekend coding project',
-        completed: false
-    },
-    {
-        text: 'Practice piano',
-        completed: false
-    },
-    {
-        text: 'Eat junk food and pass out',
-        completed: true
-    }
-];
-
 console.log('client.js loaded');
 
 $(document).ready(function() {
@@ -24,12 +5,19 @@ $(document).ready(function() {
 
     $('#submit-btn').on('click', addTodo);
 
-    // displayList(dummyData);
     getTodos();
 });
 
 function addTodo() {
-    
+    const dataToSend = {text: $('#todo-in').val(), completed: false}
+    $.ajax({
+        type: 'POST',
+        url: '/todos',
+        data: dataToSend
+    }).then(function(response) {
+        getTodos();
+        $('#todo-in').val('');
+    })
 }
 
 function getTodos() {
