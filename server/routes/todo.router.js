@@ -38,5 +38,18 @@ todoRouter.post('/', (req,res) =>{
 
 
 // DELETE
+todoRouter.delete('/:id', (req,res) => {
+    const id = req.params.id;
+    const queryText = `DELETE FROM "todos" WHERE "id" = $1`
+
+    pool.query(queryText, [id])
+    .then((result) => {
+        res.send(204);
+    }).catch((error) => {
+        console.log(error);
+        res.sendStatus(500);
+    });
+});
+
 
 module.exports = todoRouter;
