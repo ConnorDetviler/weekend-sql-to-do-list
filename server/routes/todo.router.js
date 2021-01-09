@@ -35,7 +35,20 @@ todoRouter.post('/', (req,res) =>{
 });
 
 // PUT
-
+todoRouter.put('/:id', (req,res) => {
+    const id = req.params.id;
+    // SET "completed" = NOT "completed" toggles the boolean value in the SQL database
+    const queryText = `UPDATE "todos"
+                       SET "completed" = NOT "completed"
+                       WHERE "id" = $1;`;
+    pool.query(queryText, [id])
+    .then((result) => {
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log(error);
+        res.sendStatus(500);
+    });
+});
 
 // DELETE
 todoRouter.delete('/:id', (req,res) => {
@@ -44,7 +57,7 @@ todoRouter.delete('/:id', (req,res) => {
 
     pool.query(queryText, [id])
     .then((result) => {
-        res.send(204);
+        res.sendStatus(204);
     }).catch((error) => {
         console.log(error);
         res.sendStatus(500);
