@@ -24,13 +24,23 @@ $(document).ready(function() {
 
     $('#submit-btn').on('click', addTodo);
 
-    displayList(dummyData);
+    // displayList(dummyData);
+    getTodos();
 });
 
 function addTodo() {
     
 }
 
+function getTodos() {
+    $.ajax({
+        type: 'GET',
+        url: '/todos'
+    }).then(function(response) {
+        console.log(response);
+        displayList(response);
+    });
+};
 
 function displayList(listData) {
     $('#todo-list').empty();
