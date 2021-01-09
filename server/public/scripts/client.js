@@ -11,18 +11,23 @@ $(document).ready(function() {
 });
 
 function addTodo() {
-    const dataToSend = {text: $('#todo-in').val(), completed: false}
-    $.ajax({
-        type: 'POST',
-        url: '/todos',
-        data: dataToSend
-    }).then(function(response) {
-        getTodos();
-        $('#todo-in').val('');
-    }).catch(function(error) {
-        console.log('Error in POST', error);
-        alert('Unable to add a new task at this time. Please try again later.');
-    });
+    if ($('#todo-in').val() === '') {
+        alert('form is empty');
+        return;
+    } else {
+        const dataToSend = {text: $('#todo-in').val(), completed: false}
+        $.ajax({
+            type: 'POST',
+            url: '/todos',
+            data: dataToSend
+        }).then(function(response) {
+            getTodos();
+            $('#todo-in').val('');
+        }).catch(function(error) {
+            console.log('Error in POST', error);
+            alert('Unable to add a new task at this time. Please try again later.');
+        });
+    };
 };
 
 function deleteTodo() {
