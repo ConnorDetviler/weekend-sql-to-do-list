@@ -15,10 +15,11 @@
         <h1>TODO LIST</h1>
     
         <form class="form-control-lg">
-            <input type="text" id="todo-in" placeholder="New Task" class="col-8">
+            <input type="text" id="todo-in" placeholder="New Task" maxlength="140" class="col-8">
             <!-- <button id="submit-btn">Add Task</button> -->
             <input type="submit" value="Add Task" id="submit-btn">
         </form>
+        <div id="character-count-text">Characters remaining: <span id="characters-remaining">140</span></div>
     
         <table class="table table-hover" id="todo-list" style="user-select: none"></table>
     </div>

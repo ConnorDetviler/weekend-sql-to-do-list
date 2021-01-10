@@ -1,11 +1,20 @@
 console.log('client.js loaded');
 
+const maxCharacters = 140;
+
 $(document).ready(function() {
     console.log('jQuery loaded');
 
     $('#submit-btn').on('click', addTodo);
     $('#todo-list').on('click', '.delete-btn', deleteTodo);
-    $('#todo-list').on('click', '.todo-text', toggleCompleted);
+    $('#todo-list').on('click', '.todo-line', toggleCompleted);
+    // next event listener counts down max characters for input
+    $('#todo-in').keyup(function() {
+        let length = $(this).val().length;
+        let remaining = maxCharacters - length;
+        console.log(remaining);
+        $('#characters-remaining').html(`${remaining}`)
+    })
 
     getTodos();
 });
@@ -82,7 +91,7 @@ function displayList(listData) {
         }
         $('#todo-list').append(`<tbody id="list-body"></tbody>`)
         $('#list-body').append(`<tr data-id="${listData[i].id}" class="table-hover ${completeClass} ">
-                                    <td class="todo-text"><span>${listData[i].text}</span></td>
+                                    <td class="todo-line"><span class="todo-text">${listData[i].text}</span></td>
                                     <td align="right"><button class="delete-btn">X</button></td>
                                 </tr>`)
     }

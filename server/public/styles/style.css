@@ -3,6 +3,11 @@
     color: #abdfbe !important;
 }
 
+.todo-text {
+    width: 70%;
+    word-wrap: break-word;
+}
+
 /* moves completed task to the right */
 .completed-task span { 
     position: relative;
