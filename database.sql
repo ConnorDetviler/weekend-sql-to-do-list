@@ -9,4 +9,4 @@ VALUES
     ('Take the garbage out', TRUE),
     ('Practice piano', FALSE),
     ('Work on weekend coding project', FALSE),
-    ('Eat a bunch of junk food and drink beer and pass out', TRUE);
+    ('Go to the grocery store', TRUE);
