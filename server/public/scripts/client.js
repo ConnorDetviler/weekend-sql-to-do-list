@@ -84,15 +84,18 @@ function displayList(listData) {
 
     for (let i = 0; i < listData.length; i++) {
         let completeClass;
+        let checkIcon;
         if(listData[i].completed === false) { // if task is not yet completed
             completeClass = '' // default state
+            checkIcon = 'far fa-square'
         } else {
             completeClass = 'completed-task' // disabled to show that task is checked off
+            checkIcon = 'far fa-check-square'
         }
         $('#todo-list').append(`<tbody id="list-body"></tbody>`)
-        $('#list-body').append(`<tr data-id="${listData[i].id}" class="table-hover ${completeClass} ">
-                                    <td class="todo-line"><span class="todo-text">${listData[i].text}</span></td>
-                                    <td align="right"><button class="delete-btn">X</button></td>
+        $('#list-body').append(`<tr data-id="${listData[i].id}" class="table-hover">
+                                    <td class="todo-line ${completeClass}"><i class="${checkIcon}"></i><span class="text-break todo-text"> ${listData[i].text}</span></td>
+                                    <td align="right"><i class="delete-btn far fa-trash-alt fa-lg"></i></td>
                                 </tr>`)
     }
 }

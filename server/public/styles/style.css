@@ -1,6 +1,13 @@
+body {
+    background-color: rgb(242, 244, 255);
+}
+
+table {
+    background-color: white;
+}
+
 .completed-task {
-    text-decoration: line-through;
-    color: #abdfbe !important;
+    color: #c6c6c6 !important;
 }
 
 .todo-text {
@@ -9,7 +16,7 @@
 }
 
 /* moves completed task to the right */
-.completed-task span { 
+.completed-task span, .completed-task i { 
     position: relative;
     left: 30px;
 }
