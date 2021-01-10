@@ -23,6 +23,7 @@ function addTodo() {
         }).then(function(response) {
             getTodos();
             $('#todo-in').val('');
+            // $('#todo-in').focus();
         }).catch(function(error) {
             console.log('Error in POST', error);
             alert('Unable to add a new task at this time. Please try again later.');
@@ -73,10 +74,16 @@ function displayList(listData) {
     $('#todo-list').empty();
 
     for (let i = 0; i < listData.length; i++) {
-        //'completed-true', 'completed-false' classes allow styling to show whether a todo is completed
-        $('#todo-list').append(`<tr data-id="${listData[i].id}" class="completed-${listData[i].completed}">
-                                    <td class="todo-text">${listData[i].text}</td>
-                                    <td><button class="delete-btn">X</button></td>
+        let completeClass;
+        if(listData[i].completed === false) { // if task is not yet completed
+            completeClass = '' // default state
+        } else {
+            completeClass = 'completed-task' // disabled to show that task is checked off
+        }
+        $('#todo-list').append(`<tbody id="list-body"></tbody>`)
+        $('#list-body').append(`<tr data-id="${listData[i].id}" class="table-hover ${completeClass} ">
+                                    <td class="todo-text"><span>${listData[i].text}</span></td>
+                                    <td align="right"><button class="delete-btn">X</button></td>
                                 </tr>`)
     }
 }
