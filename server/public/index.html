@@ -12,13 +12,17 @@
     <title>Todo List</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container pt-5 todo-list-container">
         <h1>TODO LIST</h1>
     
         <form class="form-control-lg">
-            <input type="text" id="todo-in" autocomplete="off" placeholder="New Task" maxlength="140" class="col-8">
-            <!-- <button id="submit-btn">Add Task</button> -->
-            <input type="submit" value="Add Task" id="submit-btn">
+            <div class="row">
+                <div class="col-1"></div>
+                <input type="text" id="todo-in" autocomplete="off" placeholder="New Task" maxlength="140" class="col-9">
+                <!-- <button id="submit-btn">Add Task</button> -->
+                <input type="submit" value="Add" id="submit-btn">
+                <div class="col-1"></div>
+            </div>
         </form>
         <div id="character-count-text">Characters remaining: <span id="characters-remaining">140</span></div>
     

@@ -94,7 +94,7 @@ function displayList(listData) {
         }
         $('#todo-list').append(`<tbody id="list-body"></tbody>`)
         $('#list-body').append(`<tr data-id="${listData[i].id}" class="table-hover">
-                                    <td class="todo-line ${completeClass}"><i class="${checkIcon}"></i><span class="text-break todo-text"> ${listData[i].text}</span></td>
+                                    <td class="todo-line ${completeClass}"><i class="${checkIcon} checkbox-style"></i><span class="text-break todo-text"> ${listData[i].text}</span></td>
                                     <td align="right"><i class="delete-btn far fa-trash-alt fa-lg"></i></td>
                                 </tr>`)
     }

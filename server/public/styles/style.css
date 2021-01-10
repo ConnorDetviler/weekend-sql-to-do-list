@@ -1,9 +1,27 @@
 body {
-    background-color: rgb(242, 244, 255);
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: linear-gradient(rgb(198, 210, 255), rgb(254, 179, 212));
 }
 
 table {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+
+.todo-list-container {
+    margin-top: 40px;
+    /* border: 1px solid #b8b8b8; */
+    padding-bottom: 15px;
+    border-radius: 10px;
+    background-color: rgba(123, 113, 171, 0.235);
 }
 
 .completed-task {
@@ -23,4 +41,10 @@ table {
 
 tr td:last-of-type {
     align-self: right;
+}
+
+.checkbox-style {
+    font-size: 17px;
+    margin-left: 3px;
+    margin-right: 5px;
 }
