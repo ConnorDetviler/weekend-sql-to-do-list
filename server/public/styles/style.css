@@ -20,8 +20,15 @@ h1 {
     margin-bottom: 25px;
 }
 
+tr {
+    border-color: rgba(123, 113, 171, 0);
+}
+
 #character-count-text {
     color: rgb(81, 83, 92);
+    margin-bottom: 5px;
+    margin-left: 9%;
+    font-size: 12px;
 }
 
 .todo-list-container {
