@@ -10,8 +10,6 @@ This to-do list is my first attempt at creating a functional and attractive full
 
 ### Prerequisites
 
-Link to software that is required to install the app (e.g. node).
-
 - [Node.js](https://nodejs.org/en/)
 - [Postgres](https://www.postgresql.org/download/)
 - [Postico](https://eggerapps.at/postico/)
