@@ -17,7 +17,7 @@ This to-do list is my first attempt at creating a functional and attractive full
 ## Installation
 
 1. Create a SQL database named `todo_list`
-2. The queries in the `database.sql` file are set up to create all the necessary tables. The INSERT statement will populate the table with dummy data if you'd like to see how the todo-list looks with data already inserted. The project is built on [Postgres](https://www.postgresql.org/download/), so you will need to make sure to have that installed. We recommend using Postico to run those queries as that was used to create the queries.
+2. The queries in the `database.sql` file are set up to create all the necessary tables. The INSERT statement will populate the table with dummy data if you'd like to see how the todo-list looks with data already inserted. The project is built on [Postgres](https://www.postgresql.org/download/), so you will need to make sure to have that installed. I recommend using Postico to run those queries as that was used to create the queries.
 3. Open up your editor of choice and run an `npm install` in the terminal
 4. Run `npm install pg`
 5. Run `npm start` and visit localhost:5000 in your browser
