@@ -19,7 +19,8 @@ $(document).ready(function() {
     getTodos();
 });
 
-function addTodo() {
+function addTodo(event) {
+    event.preventDefault();
     if ($('#todo-in').val() === '') {
         alert('form is empty');
         return;
