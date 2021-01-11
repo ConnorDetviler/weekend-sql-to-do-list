@@ -6,9 +6,7 @@ _Duration: Weekend Challenge_
 
 This to-do list is my first attempt at creating a functional and attractive full-stack app from scratch.
 
-## Screen Shot
-
-
+![alt text](https://github.com/[ConnorDetviler]/[weekend-sql-to-do-list]/blob/[branch]/image.jpg?raw=true)
 
 ### Prerequisites
 
